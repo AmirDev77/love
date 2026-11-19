@@ -1,0 +1,816 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050b18">
+<title>برای ستایش من 💙</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #050b18;
+    --blue: #287dcc;
+    --light: #9cddff;
+    --white: #f4f8ff;
+    --muted: #a5b7ce;
+    --border: rgba(142,210,255,.17);
+    --purple: #7778e8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(27,116,220,.22), transparent 35%),
+        radial-gradient(circle at 85% 65%, rgba(104,91,220,.15), transparent 35%),
+        radial-gradient(circle at 50% 100%, rgba(40,170,220,.12), transparent 40%),
+        linear-gradient(135deg,#040916,#0a1930,#071326);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #d9f3ff;
+    border-radius: 50%;
+    animation: sparkle 3s infinite alternate;
+}
+
+@keyframes sparkle {
+    from { opacity: .1; transform: scale(.7); }
+    to { opacity: .9; transform: scale(1.6); }
+}
+
+.orb {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: rgba(30,130,220,.15);
+    filter: blur(110px);
+    border-radius: 50%;
+    z-index: -2;
+    pointer-events: none;
+}
+
+.orb.one {
+    top: 5%;
+    right: -180px;
+}
+
+.orb.two {
+    bottom: 5%;
+    left: -180px;
+    background: rgba(105,90,220,.13);
+}
+
+/* Header */
+
+header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+.brand {
+    color: var(--light);
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.header-text {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Hero */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 130px 22px 90px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 760px;
+    animation: entrance 1.2s ease both;
+}
+
+.top-label {
+    display: inline-block;
+    padding: 9px 23px;
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    background: rgba(142,223,255,.06);
+    color: var(--light);
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: clamp(43px,8vw,85px);
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg,#a9ecff,#48a9ed,#a9a9ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-description {
+    max-width: 620px;
+    margin: 15px auto;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 2.8;
+    font-weight: 300;
+}
+
+.main-button {
+    margin-top: 32px;
+    padding: 14px 32px;
+    color: white;
+    border: 1px solid rgba(142,223,255,.3);
+    border-radius: 12px;
+    background: linear-gradient(135deg,#278fd5,#174a83);
+    box-shadow: 0 10px 40px rgba(16,117,178,.2);
+    font-size: 14px;
+    transition: .3s;
+}
+
+.main-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(16,117,178,.4);
+}
+
+.scroll {
+    position: absolute;
+    bottom: 25px;
+    color: #7896b0;
+    font-size: 11px;
+    animation: updown 2s infinite;
+}
+
+@keyframes updown {
+    50% { transform: translateY(8px); }
+}
+
+@keyframes entrance {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sections */
+
+section {
+    padding: 100px 22px;
+}
+
+.container {
+    width: min(850px,100%);
+    margin: auto;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.heading small {
+    color: var(--light);
+    font-size: 12px;
+}
+
+.heading h2 {
+    font-size: clamp(25px,4vw,36px);
+    margin-top: 12px;
+}
+
+.heading p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+/* Story */
+
+.story {
+    padding: 40px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.018));
+    box-shadow: 0 25px 80px rgba(0,0,0,.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.story::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(to bottom,#9ceaff,transparent);
+}
+
+.story p {
+    color: #cbdbea;
+    font-size: 14px;
+    line-height: 2.9;
+    margin-bottom: 22px;
+}
+
+.story p:last-child {
+    margin-bottom: 0;
+}
+
+.story strong {
+    color: var(--light);
+}
+
+/* Highlight */
+
+.highlight {
+    text-align: center;
+    padding: 75px 22px;
+}
+
+.symbol {
+    font-size: 60px;
+    color: var(--light);
+}
+
+.highlight p {
+    max-width: 650px;
+    margin: 10px auto;
+    font-size: clamp(20px,4vw,30px);
+    line-height: 2.3;
+    font-weight: 500;
+}
+
+.highlight span {
+    color: var(--light);
+}
+
+/* Letter */
+
+.letter-card {
+    padding: 40px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background: linear-gradient(145deg,rgba(15,48,78,.92),rgba(7,20,38,.95));
+    text-align: center;
+    box-shadow: 0 20px 70px rgba(0,0,0,.25);
+}
+
+.envelope {
+    width: 75px;
+    height: 75px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 22px;
+    font-size: 33px;
+    background: rgba(69,166,217,.1);
+}
+
+.letter-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.letter-button {
+    margin-top: 25px;
+    padding: 13px 30px;
+    border: 1px solid rgba(142,223,255,.3);
+    background: rgba(36,135,190,.13);
+    color: var(--light);
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.letter-button:hover {
+    background: rgba(36,135,190,.3);
+    transform: translateY(-3px);
+}
+
+.letter-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    text-align: right;
+    transition: max-height 1.3s ease,opacity .8s ease,margin .8s ease;
+}
+
+.letter-content.open {
+    max-height: 1800px;
+    opacity: 1;
+    margin-top: 35px;
+}
+
+.letter-content p {
+    color: #d2e1ed;
+    font-size: 14px;
+    line-height: 2.9;
+    margin-bottom: 18px;
+}
+
+.signature {
+    color: var(--light) !important;
+    text-align: left;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+/* Ending */
+
+.ending {
+    text-align: center;
+    padding-bottom: 120px;
+}
+
+.ending h2 {
+    font-size: clamp(26px,5vw,42px);
+    margin-bottom: 20px;
+}
+
+.ending h2 span {
+    color: var(--light);
+}
+
+.ending p {
+    color: var(--muted);
+    max-width: 600px;
+    margin: auto;
+    font-size: 14px;
+    line-height: 2.8;
+}
+
+.big-heart {
+    display: inline-block;
+    font-size: 38px;
+    margin-top: 30px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    15% { transform: scale(1.18); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.12); }
+}
+
+/* Footer */
+
+footer {
+    padding: 25px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    text-align: center;
+    color: #7893a9;
+    font-size: 11px;
+}
+
+footer span {
+    color: var(--light);
+}
+
+/* Reveal */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity .9s ease,transform .9s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile */
+
+@media(max-width:600px) {
+    header {
+        padding: 20px 6%;
+    }
+
+    .hero {
+        min-height: 95vh;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    section {
+        padding: 75px 18px;
+    }
+
+    .story {
+        padding: 27px 22px;
+    }
+
+    .story p,
+    .letter-content p {
+        font-size: 13px;
+    }
+
+    .letter-card {
+        padding: 30px 20px;
+    }
+
+    .header-text {
+        font-size: 10px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,*::before,*::after {
+        animation-duration: .01ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+<div class="orb one"></div>
+<div class="orb two"></div>
+
+<header>
+    <div class="brand">A ♥ S</div>
+    <div class="header-text">یه چیزی برای تو، ستایش من 💙</div>
+</header>
+
+<main>
+
+<!-- Hero -->
+
+<section class="hero">
+    <div class="hero-content">
+
+        <div class="top-label">
+            از طرف امیر، فقط برای تو ❤️
+        </div>
+
+        <h1>
+            ستایشِ <span>جانم...</span>
+        </h1>
+
+        <p class="hero-description">
+            راستش نمی‌دونم چطور باید شروع کنم...
+            فقط دلم خواست یه گوشه از این دنیای مجازی رو برای تو بسازم؛
+            برای کسی که توی این مدت برام عزیز شده
+            و بودنش برام اهمیت زیادی داره.
+        </p>
+
+        <button class="main-button" onclick="scrollToStory()">
+            بیا یه چیزی بهت بگم 💙
+        </button>
+
+    </div>
+
+    <div class="scroll">یه کم پایین‌تر بیا ↓</div>
+</section>
+
+<!-- Story -->
+
+<section id="story">
+
+    <div class="container">
+
+        <div class="heading reveal">
+            <small>یه حرف از ته دلم</small>
+            <h2>از وقتی تو اومدی...</h2>
+            <p>شاید خودت ندونی، ولی برام خیلی عزیزی.</p>
+        </div>
+
+        <div class="story reveal">
+
+            <p>
+                ستایش، می‌دونی؟
+                بعضی وقت‌ها آدم بدون اینکه خودش متوجه بشه،
+                به یه نفر و حضورش عادت می‌کنه.
+                به پیام‌هاش، به صداش، به حرف زدن‌های ساده‌ش
+                و حتی به همون شیطنت‌های کوچیکش.
+            </p>
+
+            <p>
+                منم کم‌کم به همین چیزهای کوچیک تو علاقه‌مند شدم.
+                به وقت‌هایی که باهات حرف می‌زنم،
+                به خنده‌هات و به اینکه از روزت برام تعریف می‌کنی.
+                حتی همین چیزهای معمولی هم کنار تو برام قشنگن.
+            </p>
+
+            <p>
+                شاید همیشه نتونم قشنگ و درست احساسم رو بیان کنم،
+                شاید بعضی وقت‌ها کم‌حرف باشم،
+                ولی این دلیل نمی‌شه که تو برام مهم نباشی.
+                اتفاقاً خیلی بیشتر از چیزی که فکر می‌کنی
+                بهت اهمیت می‌دم.
+            </p>
+
+            <p>
+                من از حرف زدن با تو، از دیدنت و از لحظه‌هایی
+                که کنار هم داریم واقعاً خوشحالم.
+                <strong>دوست دارم این لحظه‌های قشنگ ادامه داشته باشن.</strong>
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Romantic quote -->
+
+<section class="highlight reveal">
+
+    <div class="container">
+
+        <div class="symbol">“</div>
+
+        <p>
+            بین تمام اتفاق‌های این روزها،
+            یکی از قشنگ‌ترین‌ها برای من
+            آشنا شدن با <span>تو</span> بود... 💙
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Love letter -->
+
+<section id="letter">
+
+    <div class="container">
+
+        <div class="heading reveal">
+            <small>یه نامه کوچیک</small>
+            <h2>چند تا حرف برای تو</h2>
+            <p>این یکی رو دوست دارم تا آخر بخونی...</p>
+        </div>
+
+        <div class="letter-card reveal">
+
+            <div class="envelope">💌</div>
+
+            <h3>برای ستایش قشنگم</h3>
+
+            <p class="subtitle">
+                حرف‌هایی که شاید همیشه فرصت گفتنشون نباشه...
+            </p>
+
+            <button
+                class="letter-button"
+                id="letterButton"
+                onclick="toggleLetter()">
+                نامه‌ات رو بخون ❤️
+            </button>
+
+            <div class="letter-content" id="letterContent">
+
+                <p>ستایش جانم... ❤️</p>
+
+                <p>
+                    نمی‌خوام این نامه پر از جمله‌های عجیب و غریب باشه.
+                    فقط می‌خوام چند تا از حرف‌هایی رو بگم
+                    که شاید همیشه فرصت گفتنشون پیش نیاد.
+                </p>
+
+                <p>
+                    از وقتی باهات آشنا شدم،
+                    یه سری چیزهای ساده برام قشنگ‌تر شدن.
+                    مثلاً اینکه بدونم قراره باهات حرف بزنم،
+                    اینکه از روزت برام تعریف کنی
+                    یا حتی درباره چیزهای معمولی با هم صحبت کنیم.
+                </p>
+
+                <p>
+                    شاید خودت متوجه نباشی،
+                    ولی همین لحظه‌های ساده برای من ارزش زیادی دارن.
+                    گاهی حتی یه پیام کوتاه از تو
+                    می‌تونه کل حال و هوای روزم رو عوض کنه.
+                </p>
+
+                <p>
+                    من قرار نیست ادعا کنم همیشه بهترین آدم دنیا هستم
+                    یا هیچ‌وقت اشتباه نمی‌کنم؛
+                    اما دوست دارم تا جایی که می‌تونم
+                    باعث آرامشت باشم،
+                    به حرف‌هات گوش بدم
+                    و کنارت لحظه‌های خوبی بسازم.
+                </p>
+
+                <p>
+                    ستایش، از اینکه توی این مدت وارد زندگی من شدی
+                    واقعاً خوشحالم.
+                    دوست دارم بیشتر بخندیم،
+                    بیشتر همدیگه رو بشناسیم
+                    و کلی خاطره قشنگ با هم بسازیم.
+                </p>
+
+                <p>
+                    نمی‌دونم آینده چه اتفاق‌هایی برامون داره،
+                    ولی امیدوارم هر روز دلیل بیشتری
+                    برای خوشحال بودن کنار هم داشته باشیم.
+                </p>
+
+                <p>
+                    فقط خواستم بدونی که بودنت برام ارزشمنده
+                    و خیلی دوستت دارم.
+                    بیشتر از چیزی که گاهی بتونم به زبون بیارم. ❤️
+                </p>
+
+                <p class="signature">
+                    با تمام علاقه‌ام، امیر 💙
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Ending -->
+
+<section class="ending reveal">
+
+    <div class="container">
+
+        <h2>
+            یه چیز دیگه هم هست...
+            <span>خوشحالم که تویی ❤️</span>
+        </h2>
+
+        <p>
+            ستایش، ممنونم بابت تمام لحظه‌های خوبی که تا الان داشتیم.
+            امیدوارم هنوز کلی حرف نگفته،
+            خنده‌های از ته دل و خاطره‌های قشنگ
+            در انتظارمون باشه.
+            دوست دارم قدر تک‌تک این لحظه‌ها رو بدونیم.
+        </p>
+
+        <div class="big-heart">💙</div>
+
+        <p style="margin-top:20px;color:var(--light)">
+            این صفحه کوچیک، فقط برای تو ساخته شده.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    ساخته شده با عشق، از طرف <span>امیر</span> برای ستایش 💙
+</footer>
+
+<script>
+
+// Stars
+
+const starsContainer = document.getElementById("stars");
+
+for (let i = 0; i < 100; i++) {
+
+    const star = document.createElement("span");
+
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.animationDelay = Math.random() * 4 + "s";
+    star.style.animationDuration =
+        (2 + Math.random() * 3) + "s";
+
+    starsContainer.appendChild(star);
+}
+
+// Scroll
+
+function scrollToStory() {
+
+    document.getElementById("story").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+// Letter
+
+function toggleLetter() {
+
+    const letter = document.getElementById("letterContent");
+    const button = document.getElementById("letterButton");
+
+    letter.classList.toggle("open");
+
+    if (letter.classList.contains("open")) {
+
+        button.textContent = "بستن نامه";
+
+        setTimeout(() => {
+            letter.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+        }, 250);
+
+    } else {
+
+        button.textContent = "نامه‌ات رو بخون ❤️";
+
+    }
+
+}
+
+// Scroll animations
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+</script>
+
+</body>
+</html>
+```
